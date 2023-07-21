@@ -117,7 +117,7 @@ func (server *Server) UpdatePackage(c *gin.Context) error {
 			"error while updating record from pgress", err )
 		return fmt.Errorf("")
 	}
-	util.Log(model.LogLevelInfo, model.ServerPackageLavel , model.GetPackages , 
+	util.Log(model.LogLevelInfo, model.ServerPackageLavel , model.UpdatePackage , 
 		"successfully updated pkg record and setting response" , pkg)
 	c.JSON(http.StatusOK, pkg)
 	return nil
