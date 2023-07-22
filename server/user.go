@@ -209,23 +209,23 @@ func (server *Server) UpdateUser(c *gin.Context) error {
 
 func (server *Server) DeleteUser(c *gin.Context) error {
 
-	// validation is to be done here 
+	// validation is to be done here
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.DeleteUser,
-	"reading user id ", nil)
+		"reading user id ", nil)
 	id := c.Param("id")
 	if id == "" {
 		util.Log(model.LogLevelError, model.ServerPackageLavel, model.DeleteUser,
-		"missing user id ", nil)
+			"missing user id ", nil)
 		return fmt.Errorf("")
 	}
-	// DB call 
+	// DB call
 	err := server.Pgress.DeleteUser(id)
 	if err != nil {
 		util.Log(model.LogLevelError, model.ServerPackageLavel, model.DeleteUser,
-		"error while deleting user record from pgress ", err)
+			"error while deleting user record from pgress ", err)
 		return fmt.Errorf("")
 	}
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.DeleteUser,
-	"successfully deleted user record ", nil)
+		"successfully deleted user record ", nil)
 	return nil
 }
