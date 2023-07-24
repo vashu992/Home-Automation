@@ -35,7 +35,7 @@ func (server *Server) GetActuatorsByFilter(c *gin.Context) (*[]model.Actuator, e
 	//DB call
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.GetActuators, "reading all actuator data", nil)
 	condition := server.readQueryParams(c)
-	actuators, err := server.Pgress.GetActuatorsByFilter(condition)
+	actuators, err := server.Pgress.GetActuatorByFilter(condition)
 	if err != nil {
 		util.Log(model.LogLevelError, model.ServerPackageLavel, model.GetActuators,
 			"error while reading actuators data from pgress", err)
@@ -80,7 +80,7 @@ func (server *Server) CreateActuator(c *gin.Context) error {
 		return fmt.Errorf("")
 	}
 	actuator.CreatedAt = time.Now().UTC()
-	actuator.ID = uuid.New()
+	actuator.Id = uuid.New()
 	//validation is to be done here
 	//DB call
 	err = server.Pgress.CreateActuator(&actuator)
