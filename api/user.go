@@ -2,7 +2,6 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/vashu992/Home-Automation/api"
 )
 
 func (api APIRoutes) UserRouts(router *gin.Engine) {
@@ -84,7 +83,7 @@ func (api APIRoutes) GetUsersByFilter(c *gin.Context) {
 // @Success 200 {string } string "Successful SighUp"
 // @failure 400 {object} model.ErrorResponse
 func (api APIRoutes) SighUp(c *gin.Context) {
-	api.Server.SighUp(c)
+	api.Server.SignUp(c)
 }
 
 // Handler to SighIn a user by email and password
@@ -97,7 +96,7 @@ func (api APIRoutes) SighUp(c *gin.Context) {
 // @failure 404 {object} model.ErrorResponse
 // @Security ApiKeyAuth
 func (api APIRoutes) SighIn(c *gin.Context) {
-	api.Server.SighIn(c)
+	api.Server.SignIn(c)
 }
 
 // Handler to get a user by ID
