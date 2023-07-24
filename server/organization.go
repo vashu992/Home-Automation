@@ -16,7 +16,7 @@ func (server *Server) GetOrganizations(c *gin.Context) (*[]model.Organization, e
 	//validation is to be done here
 	//DB call
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.GetOrganizations, "reading all organization data", nil)
-	organizations, err := server.Pgress.GetOrganizations()
+	organizations, err := server.Pgress.GetOraganizations()
 	if err != nil {
 		util.Log(model.LogLevelError, model.ServerPackageLavel, model.GetOrganizations,
 			"error while reading organizations data from pgress", err)
@@ -35,7 +35,7 @@ func (server *Server) GetOrganizationsByFilter(c *gin.Context) (*[]model.Organiz
 	//DB call
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.GetOrganizations, "reading all organization data", nil)
 	condition := server.readQueryParams(c)
-	organizations, err := server.Pgress.GetOrganizationsByFilter(condition)
+	organizations, err := server.Pgress.GetOraganizationsByFilter(condition)
 	if err != nil {
 		util.Log(model.LogLevelError, model.ServerPackageLavel, model.GetOrganizations,
 			"error while reading organizations data from pgress", err)
@@ -54,7 +54,7 @@ func (server *Server) GetOrganization(c *gin.Context) (*model.Organization, erro
 	//DB call
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.GetOrganization,
 		"reading organization data from pgress", nil)
-	organization, err := server.Pgress.GetOrganization(c.Param("id"))
+	organization, err := server.Pgress.GetOraganization(c.Param("id"))
 	if err != nil {
 		util.Log(model.LogLevelError, model.ServerPackageLavel, model.GetOrganization,
 			"error while reading organization data from pgress", err)
