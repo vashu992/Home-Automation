@@ -52,8 +52,8 @@ func (api APIRoutes) GetAllFloors(c *gin.Context) {
 // @param created_by query string false "created_by"
 // @param updated_at query string false "updated_at"
 // @param updated_by query string false "updated_by"
-// @param start_date query string false "start date"
-// @param end_date query string false "end date"
+// @param start_date query string false "start_date"
+// @param end_date query string false "end_date"
 // @param page query int false "Page number (default:1)"
 // @param limit query int false "Number of results per page (default:10)"
 // @success 200 {array} model.Floor
