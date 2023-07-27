@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-"
+	ginSwagger "github.com/swaggo/gin-swagger"
 	_"github.com/vashu992/Home-Automation/docs"
 	"github.com/vashu992/Home-Automation/server"
 	"github.com/vashu992/Home-Automation/store/pgress"
@@ -15,7 +15,7 @@ type APIRoutes struct {
 	Server server.ServerOperation
 }
 
-func (api APIRoutes) StartApp(router *gin.Engine, server.Server) {
+func (api APIRoutes) StartApp(router *gin.Engine,server server.Server) {
 
 	// SetUp  Server
 	fmt.Println("Craeting new server .....")
@@ -23,7 +23,7 @@ func (api APIRoutes) StartApp(router *gin.Engine, server.Server) {
 	api.Server.NewServer(pgress.PgressStore{})
 
 	// Swagger documentation
-	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Hadler))
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	//user routs
 	api.ActuatorRouts(router)

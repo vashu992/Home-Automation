@@ -75,7 +75,7 @@ func (api APIRoutes) GetOrganization(c *gin.Context) {
 }
 
 // Handler to create a organization
-// @router /organization /create [post]
+// @router /organization/create [post]
 // @summary Created a organization
 // @tags organizations
 // @accept json

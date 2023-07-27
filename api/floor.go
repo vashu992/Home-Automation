@@ -28,7 +28,7 @@ func (api APIRoutes) GetAllFloors(c *gin.Context) {
 }
 
 // Handler to get all floor based on filter
-// @router /floor /filter [get]
+// @router /floor/filter [get]
 // @summary Get all floors based on filters
 // @tags floors
 // @produce json

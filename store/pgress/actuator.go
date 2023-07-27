@@ -8,7 +8,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func (store PgressStore) GetActuatorS() (*[]model.Actuator, error) {
+func (store PgressStore) GetActuators() (*[]model.Actuator, error) {
 	var actuators []model.Actuator
 	util.Log(model.LogLevelInfo, model.PgressPackageLevel, model.GetActuators, "reading all actuator data ", nil)
 	resp := store.DB.Find(&actuators)
@@ -22,7 +22,7 @@ func (store PgressStore) GetActuatorS() (*[]model.Actuator, error) {
 	return &actuators, nil
 }
 
-func (store PgressStore) GetActuatorsByFilter(filter map[string]string) (*[]model.Actuator, error) {
+func (store PgressStore) GetActuatorByFilter(filter map[string]string) (*[]model.Actuator, error) {
 	var actuator []model.Actuator
 	util.Log(model.LogLevelInfo, model.PgressPackageLevel, model.GetActuatorByFilter,
 		"reading actuator data from DB based on filter ", filter)

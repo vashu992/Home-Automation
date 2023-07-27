@@ -1,0 +1,2656 @@
+basePath: /
+definitions:
+  gorm.DeletedAt:
+    properties:
+      time:
+        type: string
+      valid:
+        description: Valid is true if Time is not NULL
+        type: boolean
+    type: object
+  model.Actuator:
+    properties:
+      area:
+        type: string
+      co2_level:
+        type: string
+      cooling_enabled:
+        type: boolean
+      cooling_type:
+        type: string
+      craeted_at:
+        type: string
+      craeted_by:
+        type: string
+      discription:
+        type: string
+      floor_id:
+        type: string
+      heating_enabled:
+        type: string
+      heating_type:
+        type: string
+      house_id:
+        type: string
+      humidity:
+        type: string
+      id:
+        type: string
+      light_level:
+        type: string
+      name:
+        type: string
+      occupancy:
+        type: string
+      room_id:
+        type: string
+      temperature:
+        type: string
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+      ventilation_enabled:
+        type: boolean
+      ventilation_type:
+        type: string
+      watt_consuption:
+        type: string
+    required:
+    - craeted_by
+    - floor_id
+    - house_id
+    - name
+    - room_id
+    type: object
+  model.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  model.Floor:
+    properties:
+      area:
+        type: string
+      co2_level:
+        type: string
+      cooling_Type:
+        type: string
+      cooling_enabled:
+        type: boolean
+      created_at:
+        type: string
+      created_by:
+        type: string
+      heating_enabled:
+        type: boolean
+      heating_type:
+        type: string
+      house_id:
+        type: string
+      humidity:
+        type: string
+      id:
+        type: string
+      light_level:
+        type: string
+      name:
+        type: string
+      occupancy:
+        type: string
+      temperature:
+        type: string
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+      ventilation_enabled:
+        type: boolean
+      ventilation_type:
+        type: string
+    required:
+    - house_id
+    - name
+    type: object
+  model.House:
+    properties:
+      area:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      description:
+        type: string
+      id:
+        type: string
+      latitude:
+        type: number
+      longitude:
+        type: number
+      name:
+        type: string
+      number_of_floor:
+        type: integer
+      occupancy:
+        type: string
+      updated_at:
+        type: string
+      updatedBy:
+        type: string
+    required:
+    - name
+    type: object
+  model.Organization:
+    properties:
+      available_number_of_floors:
+        type: integer
+      available_number_of_house:
+        type: integer
+      available_number_of_rooms:
+        type: integer
+      available_number_of_sensors:
+        type: integer
+      available_number_of_users:
+        type: integer
+      available_point:
+        type: integer
+      created:
+        type: string
+      created_by:
+        type: string
+      description:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      package_id:
+        type: string
+      package_type:
+        type: string
+      passward:
+        type: string
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+    required:
+    - email
+    - name
+    - package_type
+    - passward
+    type: object
+  model.Package:
+    properties:
+      availibility:
+        type: string
+      benefits:
+        type: string
+      created_at:
+        type: string
+      description:
+        type: string
+      duration:
+        $ref: '#/definitions/time.Duration'
+      features:
+        type: string
+      id:
+        type: string
+      limit:
+        type: string
+      name:
+        type: string
+      number_of_actuator:
+        type: integer
+      number_of_floor:
+        type: integer
+      number_of_house:
+        type: integer
+      number_of_room:
+        type: integer
+      number_of_sensor:
+        type: integer
+      number_of_user:
+        type: integer
+      point:
+        type: integer
+      point_rate_Id:
+        type: string
+      price:
+        type: integer
+      status:
+        type: boolean
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+    required:
+    - created_at
+    - duration
+    - price
+    - status
+    type: object
+  model.PointRate:
+    properties:
+      actuator:
+        type: integer
+      created_at:
+        type: string
+      created_by:
+        type: string
+      description:
+        type: string
+      floor:
+        type: integer
+      house:
+        type: integer
+      id:
+        type: string
+      name:
+        type: string
+      room:
+        type: integer
+      sensor:
+        type: integer
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+      user:
+        type: integer
+    required:
+    - floor
+    - house
+    - name
+    - room
+    - sensor
+    - user
+    type: object
+  model.Room:
+    properties:
+      area:
+        type: string
+      co2_level:
+        type: string
+      cooling_enabaled:
+        type: boolean
+      cooling_type:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      description:
+        type: string
+      fllor_id:
+        type: string
+      heating_enabled:
+        type: boolean
+      heating_type:
+        type: string
+      house_id:
+        type: string
+      humidity:
+        type: string
+      id:
+        type: string
+      light_level:
+        type: string
+      occupancy:
+        type: string
+      temperature:
+        type: string
+      updated_By:
+        type: string
+      updated_at:
+        type: string
+      ventilation_enabled:
+        type: boolean
+      ventilation_type:
+        type: string
+    required:
+    - fllor_id
+    - house_id
+    type: object
+  model.Sensor:
+    properties:
+      created_at:
+        type: string
+      created_by:
+        type: string
+      end_time:
+        type: string
+      floor_id:
+        type: string
+      house_id:
+        type: string
+      id:
+        type: string
+      max_reading:
+        type: string
+      min_reading:
+        type: string
+      name:
+        type: string
+      reading:
+        type: string
+      refresh_rate:
+        $ref: '#/definitions/time.Duration'
+      room_id:
+        type: string
+      start_time:
+        type: string
+      status:
+        type: string
+      unit:
+        type: string
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+    required:
+    - created_by
+    - floor_id
+    - house_id
+    - name
+    - refresh_rate
+    - room_id
+    - status
+    type: object
+  model.SensorReading:
+    properties:
+      created_at:
+        type: string
+      id:
+        type: string
+      reading:
+        type: string
+      sensor_id:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  model.SuccessResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  model.User:
+    properties:
+      active_status:
+        type: boolean
+      address_type:
+        type: string
+      city:
+        type: string
+      created_at:
+        type: string
+      created_by:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        $ref: '#/definitions/gorm.DeletedAt'
+      district:
+        type: string
+      email:
+        type: string
+      house_name:
+        type: string
+      house_no:
+        type: integer
+      id:
+        type: string
+      landline_number:
+        type: integer
+      landmark:
+        type: string
+      lane_name:
+        type: string
+      lane_number:
+        type: integer
+      name:
+        type: string
+      nation:
+        type: string
+      org_id:
+        type: string
+      password:
+        type: string
+      post:
+        type: string
+      primary_mobile_number:
+        type: integer
+      publisher:
+        type: string
+      secondary_mobile_number:
+        type: integer
+      state:
+        type: string
+      type:
+        type: string
+      updated_at:
+        type: string
+      updated_by:
+        type: string
+      updatedAt:
+        type: string
+      village:
+        type: string
+    required:
+    - active_status
+    - address_type
+    - created_by
+    - district
+    - email
+    - name
+    - nation
+    - password
+    - primary_mobile_number
+    - state
+    type: object
+  model.UserSignIn:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    required:
+    - email
+    - password
+    type: object
+  time.Duration:
+    enum:
+    - -9223372036854775808
+    - 9223372036854775807
+    - 1
+    - 1000
+    - 1000000
+    - 1000000000
+    - 60000000000
+    - 3600000000000
+    type: integer
+    x-enum-varnames:
+    - minDuration
+    - maxDuration
+    - Nanosecond
+    - Microsecond
+    - Millisecond
+    - Second
+    - Minute
+    - Hour
+host: localhost:8000
+info:
+  contact: {}
+  description: API for managing users
+  title: User API
+  version: "1.0"
+paths:
+  /actuator/{id}:
+    get:
+      parameters:
+      - description: Actuator ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Actuator'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a actuator by ID
+      tags:
+      - actuators
+  /actuator/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (defaults: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Actuator'
+            type: array
+      summary: Get all actuators
+      tags:
+      - actuators
+  /actuator/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Actuator object
+        in: body
+        name: actuator
+        required: true
+        schema:
+          $ref: '#/definitions/model.Actuator'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Actuator'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a actuator
+      tags:
+      - actuators
+  /actuator/delete/{id}:
+    delete:
+      parameters:
+      - description: Actuator ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a actuator
+      tags:
+      - actuators
+  /actuator/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: rooms_id
+        in: query
+        name: rooms_id
+        type: string
+      - description: house_id
+        in: query
+        name: house_id
+        type: string
+      - description: floor_id
+        in: query
+        name: floor_id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: description
+        in: query
+        name: description
+        type: string
+      - description: area
+        in: query
+        name: area
+        type: string
+      - description: watt_consumption
+        in: query
+        name: watt_consumption
+        type: string
+      - description: occupancy
+        in: query
+        name: occupancy
+        type: string
+      - description: heating_enabled
+        in: query
+        name: heating_enabled
+        type: boolean
+      - description: heating_type
+        in: query
+        name: heating_type
+        type: string
+      - description: cooling_enabled
+        in: query
+        name: cooling_enabled
+        type: boolean
+      - description: cooling_type
+        in: query
+        name: cooling_type
+        type: string
+      - description: ventilation_enabled
+        in: query
+        name: ventilation_enabled
+        type: boolean
+      - description: ventilation_type
+        in: query
+        name: ventilation_type
+        type: string
+      - description: temperature
+        in: query
+        name: temperature
+        type: string
+      - description: humidity
+        in: query
+        name: humidity
+        type: string
+      - description: light_level
+        in: query
+        name: light_level
+        type: string
+      - description: co2_level
+        in: query
+        name: co2_level
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: start date
+        in: query
+        name: start_date
+        type: string
+      - description: end date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Actuator'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all actuators based on given filters
+      tags:
+      - actuators
+  /actuator/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Actuator ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Actuator object
+        in: body
+        name: actuator
+        required: true
+        schema:
+          $ref: '#/definitions/model.Actuator'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Actuator'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a actuator
+      tags:
+      - actuators
+  /floor/{id}:
+    get:
+      parameters:
+      - description: Floor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Floor'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a floor by ID
+      tags:
+      - floors
+  /floor/all:
+    get:
+      parameters:
+      - description: Page number (default:1)
+        in: query
+        name: page
+        type: integer
+      - description: Number of results per page (default:10)
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Floor'
+            type: array
+      summary: Get all floors
+      tags:
+      - floors
+  /floor/delete/{id}:
+    delete:
+      parameters:
+      - description: Floor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a floor
+      tags:
+      - floors
+  /floor/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: house_id
+        in: query
+        name: house_id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: description
+        in: query
+        name: description
+        type: string
+      - description: area
+        in: query
+        name: area
+        type: string
+      - description: occupancy
+        in: query
+        name: occupancy
+        type: string
+      - description: heating_enabled
+        in: query
+        name: heating_enabled
+        type: string
+      - description: heating_type
+        in: query
+        name: heating_type
+        type: string
+      - description: cooling_enabled
+        in: query
+        name: cooling_enabled
+        type: string
+      - description: cooling_type
+        in: query
+        name: cooling_type
+        type: string
+      - description: ventilation_enabled
+        in: query
+        name: ventilation_enabled
+        type: string
+      - description: ventilation_type
+        in: query
+        name: ventilation_type
+        type: string
+      - description: temperature
+        in: query
+        name: temperature
+        type: string
+      - description: humidity
+        in: query
+        name: humidity
+        type: string
+      - description: light_level
+        in: query
+        name: light_level
+        type: string
+      - description: co2_false
+        in: query
+        name: co2_level
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: start_date
+        in: query
+        name: start_date
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: Page number (default:1)
+        in: query
+        name: page
+        type: integer
+      - description: Number of results per page (default:10)
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Floor'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all floors based on filters
+      tags:
+      - floors
+  /floor/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Floor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Floor object
+        in: body
+        name: floor
+        required: true
+        schema:
+          $ref: '#/definitions/model.Floor'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Floor'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a floor
+      tags:
+      - floors
+  /house/{id}:
+    get:
+      parameters:
+      - description: House ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.House'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a house by ID
+      tags:
+      - houses
+  /house/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: Number of results per page (default:10)
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.House'
+            type: array
+      summary: Get all houses
+      tags:
+      - houses
+  /house/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: House object
+        in: body
+        name: house
+        required: true
+        schema:
+          $ref: '#/definitions/model.House'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.House'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a house
+      tags:
+      - houses
+  /house/delete/{id}:
+    delete:
+      parameters:
+      - description: House ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a house
+      tags:
+      - houses
+  /house/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: House ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: House object
+        in: body
+        name: house
+        required: true
+        schema:
+          $ref: '#/definitions/model.House'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.House'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a house
+      tags:
+      - houses
+  /organization/{id}:
+    get:
+      parameters:
+      - description: organization ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Organization'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a organization by ID
+      tags:
+      - organizations
+  /organization/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Organization'
+            type: array
+      summary: Get all organizations
+      tags:
+      - organizations
+  /organization/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Organization object
+        in: body
+        name: organization
+        required: true
+        schema:
+          $ref: '#/definitions/model.Organization'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Organization'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Created a organization
+      tags:
+      - organizations
+  /organization/delete/{id}:
+    delete:
+      parameters:
+      - description: Organization ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a organization
+      tags:
+      - organizations
+  /organization/filter:
+    get:
+      parameters:
+      - description: ID
+        in: query
+        name: id
+        type: string
+      - description: package_id
+        in: query
+        name: package_id
+        required: true
+        type: string
+      - description: Name
+        in: query
+        name: name
+        required: true
+        type: string
+      - description: Description
+        in: query
+        name: description
+        type: string
+      - description: package_type
+        in: query
+        name: package_type
+        required: true
+        type: string
+      - description: Email
+        in: query
+        name: email
+        required: true
+        type: string
+      - description: Password
+        in: query
+        name: password
+        required: true
+        type: string
+      - description: available_points
+        in: query
+        name: available_points
+        type: integer
+      - description: available_number_of_rooms
+        in: query
+        name: available_number_of_rooms
+        type: integer
+      - description: available_number_of_floors
+        in: query
+        name: available_number_of_floors
+        type: integer
+      - description: available_number_of_houses
+        in: query
+        name: available_number_of_houses
+        type: integer
+      - description: available_number_of_users
+        in: query
+        name: available_number_of_users
+        type: integer
+      - description: available_number_of_actuators
+        in: query
+        name: available_number_of_actuators
+        type: integer
+      - description: available_number_of_sensors
+        in: query
+        name: available_number_of_sensors
+        type: integer
+      - description: created_by
+        in: query
+        name: created_by
+        required: true
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        required: true
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: 'page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Organization'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all organizations based on given filters
+      tags:
+      - organizations
+  /organization/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Organization ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Organization object
+        in: body
+        name: organization
+        required: true
+        schema:
+          $ref: '#/definitions/model.Organization'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Organization'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a organization
+      tags:
+      - organizations
+  /pkg/{id}:
+    get:
+      parameters:
+      - description: Package ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Package'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a pkg by ID
+      tags:
+      - pkgs
+  /pkg/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Package'
+            type: array
+      summary: Get all pkgs
+      tags:
+      - pkgs
+  /pkg/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Package object
+        in: body
+        name: pkg
+        required: true
+        schema:
+          $ref: '#/definitions/model.Package'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Package'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a pkg
+      tags:
+      - pkgs
+  /pkg/delete/{id}:
+    delete:
+      parameters:
+      - description: Package ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a pkg
+      tags:
+      - pkgs
+  /pkg/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: point_rate_id
+        in: query
+        name: point_rate_id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: description
+        in: query
+        name: description
+        type: string
+      - description: price
+        in: query
+        name: price
+        type: integer
+      - description: Duration
+        in: query
+        name: Duration
+        type: string
+      - description: limits
+        in: query
+        name: limits
+        type: string
+      - description: number_of_rooms
+        in: query
+        name: number_of_rooms
+        type: integer
+      - description: number_of_house
+        in: query
+        name: number_of_house
+        type: integer
+      - description: number_of_floor
+        in: query
+        name: number_of_floor
+        type: integer
+      - description: number_of_user
+        in: query
+        name: number_of_user
+        type: integer
+      - description: number_of_actuator
+        in: query
+        name: number_of_actuator
+        type: integer
+      - description: number_of_sensor
+        in: query
+        name: number_of_sensor
+        type: integer
+      - description: points
+        in: query
+        name: points
+        type: integer
+      - description: benifits
+        in: query
+        name: benifits
+        type: string
+      - description: avilibility
+        in: query
+        name: avilibility
+        type: string
+      - description: fratures
+        in: query
+        name: fratures
+        type: string
+      - description: status
+        in: query
+        name: status
+        type: boolean
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: start_date
+        in: query
+        name: start_date
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Package'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all pkgs based on given filters
+      tags:
+      - pkgs
+  /pkg/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Package ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Package object
+        in: body
+        name: pkg
+        required: true
+        schema:
+          $ref: '#/definitions/model.Package'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Package'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a pkg
+      tags:
+      - pkgs
+  /pointRate/{id}:
+    get:
+      parameters:
+      - description: PointRate ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PointRate'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a pointRate by ID
+      tags:
+      - pointRates
+  /pointRate/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.PointRate'
+            type: array
+      summary: Get all pointRates
+      tags:
+      - pointRates
+  /pointRate/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: PointRate object
+        in: body
+        name: pointRate
+        required: true
+        schema:
+          $ref: '#/definitions/model.PointRate'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.PointRate'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a pointRate
+      tags:
+      - pointRates
+  /pointRate/delete/{id}:
+    delete:
+      parameters:
+      - description: PointRate ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a pointRate
+      tags:
+      - pointRates
+  /pointRate/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: description
+        in: query
+        name: description
+        type: string
+      - description: house
+        in: query
+        name: house
+        type: integer
+      - description: floor
+        in: query
+        name: floor
+        type: integer
+      - description: room
+        in: query
+        name: room
+        type: integer
+      - description: user
+        in: query
+        name: user
+        type: integer
+      - description: sensor
+        in: query
+        name: sensor
+        type: integer
+      - description: actuator
+        in: query
+        name: actuator
+        type: integer
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: start_date
+        in: query
+        name: start_date
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.PointRate'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all pointRates based on given filters
+      tags:
+      - pointRates
+  /pointRate/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: PointRate ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: PointRate object
+        in: body
+        name: pointRate
+        required: true
+        schema:
+          $ref: '#/definitions/model.PointRate'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.PointRate'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a pointRate
+      tags:
+      - pointRates
+  /room/{id}:
+    get:
+      parameters:
+      - description: Room ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Room'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a room by ID
+      tags:
+      - rooms
+  /room/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Room'
+            type: array
+      summary: Get all rooms
+      tags:
+      - rooms
+  /room/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Room object
+        in: body
+        name: room
+        required: true
+        schema:
+          $ref: '#/definitions/model.Room'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Room'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a room
+      tags:
+      - rooms
+  /room/delete/{id}:
+    delete:
+      parameters:
+      - description: Room ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a room
+      tags:
+      - rooms
+  /room/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: house_id
+        in: query
+        name: house_id
+        type: string
+      - description: floor_id
+        in: query
+        name: floor_id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: location
+        in: query
+        name: location
+        type: string
+      - description: area
+        in: query
+        name: area
+        type: string
+      - description: occupancy
+        in: query
+        name: occupancy
+        type: string
+      - description: heating_enabled
+        in: query
+        name: heating_enabled
+        type: boolean
+      - description: heatin_type
+        in: query
+        name: heatin_type
+        type: string
+      - description: cooling_enabled
+        in: query
+        name: cooling_enabled
+        type: boolean
+      - description: cooling_type
+        in: query
+        name: cooling_type
+        type: string
+      - description: ventilation_enabled
+        in: query
+        name: ventilation_enabled
+        type: boolean
+      - description: ventilation_type
+        in: query
+        name: ventilation_type
+        type: string
+      - description: temperature
+        in: query
+        name: temperature
+        type: string
+      - description: humidity
+        in: query
+        name: humidity
+        type: string
+      - description: light_level
+        in: query
+        name: light_level
+        type: string
+      - description: co2_level
+        in: query
+        name: co2_level
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: start_date
+        in: query
+        name: start_date
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Room'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all rooms based on given filters
+      tags:
+      - rooms
+  /room/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Room ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Room object
+        in: body
+        name: room
+        required: true
+        schema:
+          $ref: '#/definitions/model.Room'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Room'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a room
+      tags:
+      - rooms
+  /sensor/{id}:
+    get:
+      parameters:
+      - description: Sensor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Sensor'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a sensor by ID
+      tags:
+      - sensors
+  /sensor/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Sensor'
+            type: array
+      summary: Get all sensors
+      tags:
+      - sensors
+  /sensor/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Sensor object
+        in: body
+        name: sensor
+        required: true
+        schema:
+          $ref: '#/definitions/model.Sensor'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.Sensor'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a sensor
+      tags:
+      - sensors
+  /sensor/delete/{id}:
+    delete:
+      parameters:
+      - description: Sensor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a sensor
+      tags:
+      - sensors
+  /sensor/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: rooms_id
+        in: query
+        name: rooms_id
+        type: string
+      - description: house_id
+        in: query
+        name: house_id
+        type: string
+      - description: floor_id
+        in: query
+        name: floor_id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: start_time
+        in: query
+        name: start_time
+        type: string
+      - description: end_time
+        in: query
+        name: end_time
+        type: string
+      - description: status
+        in: query
+        name: status
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: reading
+        in: query
+        name: reading
+        type: string
+      - description: unit
+        in: query
+        name: unit
+        type: string
+      - description: refresh_rate
+        in: query
+        name: refresh_rate
+        type: string
+      - description: min_reading
+        in: query
+        name: min_reading
+        type: string
+      - description: max_reading
+        in: query
+        name: max_reading
+        type: string
+      - description: start_date
+        in: query
+        name: start_date
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Sensor'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all sensors based on given filters
+      tags:
+      - sensors
+  /sensor/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Sensor ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Sensor object
+        in: body
+        name: sensor
+        required: true
+        schema:
+          $ref: '#/definitions/model.Sensor'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.Sensor'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a sensor
+      tags:
+      - sensors
+  /sensorreading/{id}:
+    get:
+      parameters:
+      - description: SensorReading ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SensorReading'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Get a sensor by ID
+      tags:
+      - sensorReadings
+  /sensorreading/all:
+    get:
+      parameters:
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.SensorReading'
+            type: array
+      summary: Get all sensorReadings
+      tags:
+      - sensorReadings
+  /sensorreading/create:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: SensorReading object
+        in: body
+        name: sensor
+        required: true
+        schema:
+          $ref: '#/definitions/model.SensorReading'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/model.SensorReading'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Create a sensor
+      tags:
+      - sensorReadings
+  /sensorreading/delete/{id}:
+    delete:
+      parameters:
+      - description: SensorReading ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Delete a sensor
+      tags:
+      - sensorReadings
+  /sensorreading/filter:
+    get:
+      parameters:
+      - description: id
+        in: query
+        name: id
+        type: string
+      - description: sensor_id
+        in: query
+        name: sensor_id
+        type: string
+      - description: reading
+        in: query
+        name: reading
+        type: string
+      - description: created_at
+        in: query
+        name: created_at
+        type: string
+      - description: updated_at
+        in: query
+        name: updated_at
+        type: string
+      - description: start_date
+        in: query
+        name: start_date
+        type: string
+      - description: end_date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.SensorReading'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all sensorReadings based on given filters
+      tags:
+      - sensorReadings
+  /sensorreading/update/{id}:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: SensorReading ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: SensorReading object
+        in: body
+        name: sensor
+        required: true
+        schema:
+          $ref: '#/definitions/model.SensorReading'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SensorReading'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: Update a sensor
+      tags:
+      - sensorReadings
+  /user/{id}:
+    get:
+      parameters:
+      - description: 'User ID '
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.User'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get a user by ID
+      tags:
+      - users
+  /user/all:
+    get:
+      parameters:
+      - description: 'page number (Default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: page of results per page (Default:10)
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.User'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all users
+      tags:
+      - user
+  /user/delete/{id}:
+    delete:
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.SuccessResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete a user
+      tags:
+      - users
+  /user/filter:
+    get:
+      parameters:
+      - description: org_id
+        in: query
+        name: org_id
+        type: string
+      - description: name
+        in: query
+        name: name
+        type: string
+      - description: publisher
+        in: query
+        name: publisher
+        type: string
+      - description: email
+        in: query
+        name: email
+        type: string
+      - description: password
+        in: query
+        name: password
+        type: string
+      - description: primary_mobile_number
+        in: query
+        name: primary_mobile_number
+        type: string
+      - description: secondary_mobile_number
+        in: query
+        name: secondary_mobile_number
+        type: string
+      - description: landline_number
+        in: query
+        name: landline_number
+        type: string
+      - description: active_status
+        in: query
+        name: active_status
+        type: string
+      - description: type
+        in: query
+        name: type
+        type: string
+      - description: address_type
+        in: query
+        name: address_type
+        type: string
+      - description: house_no
+        in: query
+        name: house_no
+        type: string
+      - description: house_name
+        in: query
+        name: house_name
+        type: string
+      - description: lane_number
+        in: query
+        name: lane_number
+        type: string
+      - description: lane_name
+        in: query
+        name: lane_name
+        type: string
+      - description: landmark
+        in: query
+        name: landmark
+        type: string
+      - description: district
+        in: query
+        name: district
+        type: string
+      - description: post
+        in: query
+        name: post
+        type: string
+      - description: city
+        in: query
+        name: city
+        type: string
+      - description: village
+        in: query
+        name: village
+        type: string
+      - description: state
+        in: query
+        name: state
+        type: string
+      - description: nation
+        in: query
+        name: nation
+        type: string
+      - description: created_by
+        in: query
+        name: created_by
+        type: string
+      - description: updated_by
+        in: query
+        name: updated_by
+        type: string
+      - description: start date
+        in: query
+        name: start_date
+        type: string
+      - description: end date
+        in: query
+        name: end_date
+        type: string
+      - description: 'Page number (default: 1)'
+        in: query
+        name: page
+        type: integer
+      - description: 'Number of results per page (default: 10)'
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.User'
+            type: array
+      security:
+      - ApiKeyAuth: []
+      summary: Get all users based on given filters
+      tags:
+      - users
+  /user/sighin:
+    post:
+      parameters:
+      - description: User object
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.UserSignIn'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: 'Successful SighIn '
+          schema:
+            type: string
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: SighIn user
+      tags:
+      - users
+  /user/sighup:
+    post:
+      parameters:
+      - description: User object
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Successful SighUp
+          schema:
+            type: string
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      summary: SighUp a user
+      tags:
+      - users
+  /user/update/{id}:
+    put:
+      parameters:
+      - description: 'User ID '
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: User object
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/model.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.User'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/model.ErrorResponse'
+      security:
+      - ApiKeyPath: []
+      summary: Update a user
+      tags:
+      - users
+schemes:
+- http
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: X-Token
+    type: apiKey
+swagger: "2.0"

@@ -65,8 +65,8 @@ func (server *Server) GetUser(c *gin.Context) (*model.User, error) {
 	return user, nil
 }
 
-// Sighup API handler
-func (server *Server) SighUp(c *gin.Context) {
+// SignUp API handler
+func (server *Server) SignUp(c *gin.Context) {
 	var user model.User
 
 	util.Log(model.LogLevelInfo, model.ServerPackageLavel, model.CreateUser,
@@ -104,8 +104,8 @@ func (server *Server) SighUp(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"token ": tokenString})
 }
 
-// SighIn API handler
-func (server *Server) SighIn(c *gin.Context) {
+// SignIn API handler
+func (server *Server) SignIn(c *gin.Context) {
 	var user model.UserSignIn
 	err := c.ShouldBindJSON(&user)
 	if err != nil {

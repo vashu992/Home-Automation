@@ -8,7 +8,7 @@ import (
 	"gorm.io/gorm"
 )
 
-func (store PgressStore) GetOrganizations() (*[]model.Organization, error) {
+func (store PgressStore) GetOraganizations() (*[]model.Organization, error) {
 	var Organizations []model.Organization
 	util.Log(model.LogLevelInfo,model.PgressPackageLevel, model.GetOrganizations, "reading all organization data ", nil)
 	resp := store.DB.Find(&Organizations)
@@ -22,7 +22,7 @@ func (store PgressStore) GetOrganizations() (*[]model.Organization, error) {
 	return &Organizations, nil
 }
 
-func (store PgressStore) GetOrganizationsByFilter(filter map[string]string) (*[]model.Organization, error) {
+func (store PgressStore) GetOraganizationsByFilter(filter map[string]string) (*[]model.Organization, error) {
 	var organization []model.Organization
 	util.Log(model.LogLevelInfo, model.PgressPackageLevel, model.GetOrganizationByFilter, 
 	"reading organization data from DB based on filter ", filter )
@@ -50,7 +50,7 @@ func (store PgressStore) GetOrganizationsByFilter(filter map[string]string) (*[]
 	return &organization, nil
 }
 
-func (store PgressStore) GetOrganization(organizationID string) (*model.Organization, error) {
+func (store PgressStore) GetOraganization(organizationID string) (*model.Organization, error) {
 	var organization model.Organization
 	util.Log(model.LogLevelInfo, model.PgressPackageLevel, model.GetOrganization, "reading organization data ", nil)
 	resp := store.DB.Find(&organization, `"id" = '`+organizationID+`'`)
@@ -65,7 +65,7 @@ func (store PgressStore) GetOrganization(organizationID string) (*model.Organiza
 	return &organization, nil
 }
 
-func (store PgressStore) CreateOranization(organization *model.Organization )error {
+func (store PgressStore) CreateOrganization(organization *model.Organization )error {
 
 	util.Log(model.LogLevelInfo, model.PgressPackageLevel, model.CreateOrganization, "creating organization data ",*organization)
 	resp:= store.DB.Create(organization)

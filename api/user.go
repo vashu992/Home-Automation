@@ -40,7 +40,7 @@ func (api APIRoutes) GetUsers(c *gin.Context) {
 // @tags users
 // @produce json
 // @param org_id query string false "org_id"
-// @param name query false "name"
+// @param name query string false "name"
 // @param publisher query string false "publisher"
 // @param email query string false "email"
 // @param password query string false "password"
@@ -51,9 +51,9 @@ func (api APIRoutes) GetUsers(c *gin.Context) {
 // @param type query string false "type"
 // @param address_type query string false "address_type"
 // @param house_no query string false "house_no"
-// @param house_name query string false "house_false"
+// @param house_name query string false "house_name"
 // @param lane_number query string false "lane_number"
-// @param lane_number query string false "lane_number"
+// @param lane_name query string false "lane_name"
 // @param landmark query string false "landmark"
 // @param district query string false "district"
 // @param post query string false "post"
@@ -65,8 +65,8 @@ func (api APIRoutes) GetUsers(c *gin.Context) {
 // @param updated_by query string false "updated_by"
 // @param start_date query string false "start date"
 // @param end_date query string false "end date"
-// @param page query int false "page number(default: 1)"
-// @param limit query int false "number of results per page (default: 10)"
+// @param page query int false "Page number (default: 1)"
+// @param limit query int false "Number of results per page (default: 10)"
 // @success 200 {array} model.User
 // @Security ApiKeyAuth
 func (api APIRoutes) GetUsersByFilter(c *gin.Context) {
@@ -87,11 +87,11 @@ func (api APIRoutes) SighUp(c *gin.Context) {
 }
 
 // Handler to SighIn a user by email and password
-// @router /user/ sighin [post]
+// @router /user/sighin [post]
 // @summary SighIn user
 // @tags users
 // @produce json
-// @param user body model.UserighIn true "User object"
+// @param user body model.UserSignIn true "User object"
 // @Success 200 {string} string "Successful SighIn "
 // @failure 404 {object} model.ErrorResponse
 // @Security ApiKeyAuth
