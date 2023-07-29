@@ -8,12 +8,12 @@ import (
 
 type Organization struct {
 	ID                       uuid.UUID `json:"id" gorm:"primarykey"`
-	PackageID                uuid.UUID `json:"package_id" binding: "required"gorm:"not null"`
-	Name                     string    `json:"name" binding:"required"gorm:"not null"`
+	PackageID                  uuid.UUID `json:"package_id" binding:"required" gorm:"not null"`
+	Name                       string    `json:"name" binding:"required" gorm:"not null"`
 	Description              string    `json:"description"`
-	PackageType              string    `json:"package_type" binding:"required"gorm:"not null"`
+	PackageType                string    `json:"package_type" binding:"required" gorm:"not null"`
 	Email                    string    `json:"email" binding:"required" gorm:"not null"`
-	Passward                 string    `json:"passward" binding:"required"gorm:"not null"`
+	Password                   string    `json:"password" binding:"required" gorm:"not null" `
 	AvailablePoint           int       `json:"available_point"`
 	AvailableNumberOfRooms   int       `json:"available_number_of_rooms"`
 	AvailableNumberOfFloors  int       `json:"available_number_of_floors"`

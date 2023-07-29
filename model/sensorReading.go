@@ -10,8 +10,8 @@ import (
 )
 
 type SensorReading struct {
-	ID   uuid.UUID  `json:"id"gorm:"primarykey"`
-	SensorID uuid.UUID `json:"sensor_id"gorm:`
+	ID        uuid.UUID `json:"id" gorm:"primaryKey"`
+	SensorID  uuid.UUID `json:"sensor_id" gorm:"primaryKey"`
 	Reading  string `json:"reading"`
 	CreatedAt  time.Time `json:"created_at"`
 	UpdatedAt  time.Time `json:"updated_at"`

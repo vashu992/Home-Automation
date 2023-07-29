@@ -8,11 +8,11 @@ import (
 
 type Actuator struct {
 	Id                 uuid.UUID `json:"id" gorm:"primarykey"`
-	RoomID             uuid.UUID `json:"room_id" binding:"required"gorm:"not null"`
-	HouseID            uuid.UUID `json:"house_id" binding:"required"gorm:"not null"`
-	FloorID            uuid.UUID `json:"floor_id" binding:"required"gorm:"not null"`
-	Name               string    `json:"name" binding:"required"gorm:"not null"`
-	Discription        string    `json:"discription" binding: "required"gorm:"not null"`
+	RoomsID            uuid.UUID `json:"rooms_id" binding:"required" gorm:"not null"`
+	HouseID            uuid.UUID `json:"house_id" binding:"required" gorm:"not null"`
+	FloorID            uuid.UUID `json:"floor_id" binding:"required" gorm:"not null"`
+	Name               string    `json:"name" binding:"required" gorm:"not null"`
+	Description        string    `json:"description"`
 	Area               string    `json:"area"`
 	WattConsuption     string    `json:"watt_consuption"`
 	Occupancy          string    `json:"occupancy"`
@@ -27,7 +27,7 @@ type Actuator struct {
 	LightLevel         string    `json:"light_level"`
 	CO2Level           string    `json:"co2_level"`
 	CreatedAt          time.Time `json:"craeted_at" gorm:"not null"`
-	CreatedBy          string    `json:"craeted_by" binding:"required"gorm:"not null"`
+	CreatedBy          string    `json:"created_by" binding:"required" gorm:"not null"`
 	UpdatedAt          time.Time `json:"updated_at"`
 	UpdatedBy          string    `json:"updated_by"`
 }
