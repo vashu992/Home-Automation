@@ -17,6 +17,7 @@ type PointRate struct {
 	Sensor      int       `json:"sensor" binding:"required" gorm:"not null"`
 	Actuator    int       `json:"actuator" binding:"required" gorm:"not null"`
 	CreatedBy   string    `json:"created_by"  gorm:"not null"`
+	CreatedAt   time.Time `json:"created_at" gorm:"not null"`
 	UpdatedAt   time.Time `json:"updated_at"`
 	UpdatedBy   string    `json:"updated_by"`
 }
