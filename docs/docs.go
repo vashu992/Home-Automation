@@ -3365,11 +3365,11 @@ const docTemplate = `{
         "model.Actuator": {
             "type": "object",
             "required": [
-                "craeted_by",
+                "created_by",
                 "floor_id",
                 "house_id",
                 "name",
-                "room_id"
+                "rooms_id"
             ],
             "properties": {
                 "area": {
@@ -3387,10 +3387,10 @@ const docTemplate = `{
                 "craeted_at": {
                     "type": "string"
                 },
-                "craeted_by": {
+                "created_by": {
                     "type": "string"
                 },
-                "discription": {
+                "description": {
                     "type": "string"
                 },
                 "floor_id": {
@@ -3420,7 +3420,7 @@ const docTemplate = `{
                 "occupancy": {
                     "type": "string"
                 },
-                "room_id": {
+                "rooms_id": {
                     "type": "string"
                 },
                 "temperature": {
@@ -3520,6 +3520,7 @@ const docTemplate = `{
         "model.House": {
             "type": "object",
             "required": [
+                "created_by",
                 "name"
             ],
             "properties": {
@@ -3553,10 +3554,10 @@ const docTemplate = `{
                 "occupancy": {
                     "type": "string"
                 },
-                "updatedBy": {
+                "updated_at": {
                     "type": "string"
                 },
-                "updated_at": {
+                "updated_by": {
                     "type": "string"
                 }
             }
@@ -3566,8 +3567,9 @@ const docTemplate = `{
             "required": [
                 "email",
                 "name",
+                "package_id",
                 "package_type",
-                "passward"
+                "password"
             ],
             "properties": {
                 "available_number_of_floors": {
@@ -3612,7 +3614,7 @@ const docTemplate = `{
                 "package_type": {
                     "type": "string"
                 },
-                "passward": {
+                "password": {
                     "type": "string"
                 },
                 "updated_at": {
@@ -3626,12 +3628,16 @@ const docTemplate = `{
         "model.Package": {
             "type": "object",
             "required": [
-                "created_at",
-                "duration",
+                "Duration",
+                "created_by",
+                "name",
                 "price",
                 "status"
             ],
             "properties": {
+                "Duration": {
+                    "$ref": "#/definitions/time.Duration"
+                },
                 "availibility": {
                     "type": "string"
                 },
@@ -3641,11 +3647,11 @@ const docTemplate = `{
                 "created_at": {
                     "type": "string"
                 },
-                "description": {
+                "created_by": {
                     "type": "string"
                 },
-                "duration": {
-                    "$ref": "#/definitions/time.Duration"
+                "description": {
+                    "type": "string"
                 },
                 "features": {
                     "type": "string"
@@ -3700,6 +3706,7 @@ const docTemplate = `{
         "model.PointRate": {
             "type": "object",
             "required": [
+                "actuator",
                 "floor",
                 "house",
                 "name",
@@ -3752,8 +3759,10 @@ const docTemplate = `{
         "model.Room": {
             "type": "object",
             "required": [
-                "fllor_id",
-                "house_id"
+                "created_by",
+                "floor_id",
+                "house_id",
+                "name"
             ],
             "properties": {
                 "area": {
@@ -3762,7 +3771,7 @@ const docTemplate = `{
                 "co2_level": {
                     "type": "string"
                 },
-                "cooling_enabaled": {
+                "cooling_enabled": {
                     "type": "boolean"
                 },
                 "cooling_type": {
@@ -3774,17 +3783,14 @@ const docTemplate = `{
                 "created_by": {
                     "type": "string"
                 },
-                "description": {
+                "floor_id": {
                     "type": "string"
                 },
-                "fllor_id": {
+                "heatin_type": {
                     "type": "string"
                 },
                 "heating_enabled": {
                     "type": "boolean"
-                },
-                "heating_type": {
-                    "type": "string"
                 },
                 "house_id": {
                     "type": "string"
@@ -3798,16 +3804,22 @@ const docTemplate = `{
                 "light_level": {
                     "type": "string"
                 },
+                "location": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
                 "occupancy": {
                     "type": "string"
                 },
                 "temperature": {
                     "type": "string"
                 },
-                "updated_By": {
+                "updated_at": {
                     "type": "string"
                 },
-                "updated_at": {
+                "updated_by": {
                     "type": "string"
                 },
                 "ventilation_enabled": {

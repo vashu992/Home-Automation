@@ -20,9 +20,9 @@ definitions:
         type: string
       craeted_at:
         type: string
-      craeted_by:
+      created_by:
         type: string
-      discription:
+      description:
         type: string
       floor_id:
         type: string
@@ -42,7 +42,7 @@ definitions:
         type: string
       occupancy:
         type: string
-      room_id:
+      rooms_id:
         type: string
       temperature:
         type: string
@@ -57,11 +57,11 @@ definitions:
       watt_consuption:
         type: string
     required:
-    - craeted_by
+    - created_by
     - floor_id
     - house_id
     - name
-    - room_id
+    - rooms_id
     type: object
   model.ErrorResponse:
     properties:
@@ -136,9 +136,10 @@ definitions:
         type: string
       updated_at:
         type: string
-      updatedBy:
+      updated_by:
         type: string
     required:
+    - created_by
     - name
     type: object
   model.Organization:
@@ -171,7 +172,7 @@ definitions:
         type: string
       package_type:
         type: string
-      passward:
+      password:
         type: string
       updated_at:
         type: string
@@ -180,21 +181,24 @@ definitions:
     required:
     - email
     - name
+    - package_id
     - package_type
-    - passward
+    - password
     type: object
   model.Package:
     properties:
+      Duration:
+        $ref: '#/definitions/time.Duration'
       availibility:
         type: string
       benefits:
         type: string
       created_at:
         type: string
+      created_by:
+        type: string
       description:
         type: string
-      duration:
-        $ref: '#/definitions/time.Duration'
       features:
         type: string
       id:
@@ -228,8 +232,9 @@ definitions:
       updated_by:
         type: string
     required:
-    - created_at
-    - duration
+    - Duration
+    - created_by
+    - name
     - price
     - status
     type: object
@@ -262,6 +267,7 @@ definitions:
       user:
         type: integer
     required:
+    - actuator
     - floor
     - house
     - name
@@ -275,7 +281,7 @@ definitions:
         type: string
       co2_level:
         type: string
-      cooling_enabaled:
+      cooling_enabled:
         type: boolean
       cooling_type:
         type: string
@@ -283,14 +289,12 @@ definitions:
         type: string
       created_by:
         type: string
-      description:
+      floor_id:
         type: string
-      fllor_id:
+      heatin_type:
         type: string
       heating_enabled:
         type: boolean
-      heating_type:
-        type: string
       house_id:
         type: string
       humidity:
@@ -299,21 +303,27 @@ definitions:
         type: string
       light_level:
         type: string
+      location:
+        type: string
+      name:
+        type: string
       occupancy:
         type: string
       temperature:
         type: string
-      updated_By:
-        type: string
       updated_at:
+        type: string
+      updated_by:
         type: string
       ventilation_enabled:
         type: boolean
       ventilation_type:
         type: string
     required:
-    - fllor_id
+    - created_by
+    - floor_id
     - house_id
+    - name
     type: object
   model.Sensor:
     properties:
